@@ -165,7 +165,7 @@ function App() {
             <p>Built for Midl VibeHack — Powering the Bitcoin Token Economy</p>
             <div className="footer-links">
               <a href="#">Docs</a>
-              <a href="https://github.com/midl-xyz">GitHub</a>
+              <a href="https://github.com/Qasim-Rokeeb/Xverse-TipJara">GitHub</a>
               <a href="#">Midl Protocol</a>
             </div>
           </footer>

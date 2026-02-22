@@ -42,7 +42,7 @@ The dApp uses Midl's EVM compatibility to treat Bitcoin as a programmable asset.
 ### Installation
 1. Clone the repository:
    ```bash
-   git clone <repository-url>
+   git clone https://github.com/Qasim-Rokeeb/Xverse-TipJara
    cd Antigravity
    ```
 2. Install dependencies:
