@@ -1,4 +1,4 @@
-# 🧡 Bitcoin TipJar - Midl VibeHack
+# 🧡 Xverse TipJar - Midl VibeHack
 
 **Native Bitcoin support for creators, powered by Midl.**
 
