@@ -28,10 +28,40 @@ The goal of Bitcoin TipJar is to demonstrate that Bitcoin can be more than a sto
 
 ## 🏗️ Architecture
 The dApp uses Midl's EVM compatibility to treat Bitcoin as a programmable asset.
+
+```mermaid
+sequenceDiagram
+    participant U as User (Tipper)
+    participant W as Xverse Wallet
+    participant F as Frontend (React)
+    participant M as Midl SDK/Node
+    participant C as Smart Contract (TipJar.sol)
+    participant B as Bitcoin Network
+
+    U->>F: Enter tip amount & message
+    F->>W: Request transaction signature
+    W->>U: Prompt for approval
+    U->>W: Approve & Sign (PSBT)
+    W->>F: Return signed transaction
+    F->>M: Broadcast to Midl Node
+    M->>C: Execute payTip(message)
+    C->>C: Record stats & message
+    M->>B: Settle transaction on BTC
+    B-->>U: Success Verification
+```
+
 1. **User Interaction**: User enters a tip amount and message in the React frontend.
 2. **SDK Logic**: `@midl/react` hooks facilitate the connection to Xverse.
 3. **Signing**: Xverse signs a Bitcoin transaction/PSBT, which Midl interprets as a call to the `payTip` function in our Solidity contract.
 4. **Settlement**: The BTC is moved within the Midl layer and recorded on the Bitcoin network.
+
+## 📺 Demo & Visuals
+
+### Product Demo
+[![Bitcoin TipJar Demo](https://img.shields.io/badge/YouTube-Watch_Demo-red?style=for-the-badge&logo=youtube)](https://www.youtube.com/watch?v=dQw4w9WgXcQ)
+
+> [!TIP]
+> This video demonstrates the end-to-end flow of connecting Xverse, sending a tip, and verifying it on the Midl Explorer.
 
 ## 📦 Getting Started
 
@@ -42,7 +72,7 @@ The dApp uses Midl's EVM compatibility to treat Bitcoin as a programmable asset.
 ### Installation
 1. Clone the repository:
    ```bash
-   git clone https://github.com/Qasim-Rokeeb/Xverse-TipJara
+   git clone https://github.com/Qasim-Rokeeb/Xverse-TipJar
    cd Antigravity
    ```
 2. Install dependencies:
